@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thuc hanh 1</title>
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+   <script>
+    let divForm = document.createElement("div");
+    divForm.setAttribute("class", "form");
+    let divTable = document.createElement("div");
+    divTable.setAttribute("class", "table");
+    document.body.appendChild(divForm);
+    document.body.appendChild(divTable);
+    //Tao h2
+    let h2 = document.createElement("h2");
+    h2.innerText= "Thông tin học viên";
+    divForm.appendChild(h2);
+    //Tao form
+    let form = document.createElement("form");
+    form.setAttribute("action","#");
+    divForm.appendChild(form);
+    //Tao input ten
+    let lableFullname = document.createElement("label");
+    lableFullname.setAttribute("for", "fullName");
+    lableFullname.innerText = "Họ và Tên";
+    let inputFullname = document.createElement("input");
+    inputFullname.setAttribute("id","fullName");
+    inputFullname.setAttribute("placeholder","vui lòng nhập tên");
+    form.appendChild(lableFullname);
+    form.appendChild(inputFullname);
+    form.innerHTML += "<br/>";
+    //Tao input email
+    let lableEmail = document.createElement("label");
+    lableEmail.setAttribute("for", "email");
+    lableEmail.innerText = "Email";
+    let inputEmail = document.createElement("input");
+    inputEmail.setAttribute("id","email");
+    inputEmail.setAttribute("placeholder","vui lòng nhập email");
+    form.appendChild(lableEmail);
+    form.appendChild(inputEmail);
+    form.innerHTML += "<br/>";
+    //Tao input tel
+    let lablePhone = document.createElement("label");
+    lablePhone.setAttribute("for", "phone");
+    lablePhone.innerText = "Số điện thoại";
+    let inputPhone = document.createElement("input");
+    inputPhone.setAttribute("id","phone");
+    inputPhone.setAttribute("placeholder","vui lòng nhập số điện thoại");
+    form.appendChild(lablePhone);
+    form.appendChild(inputPhone);
+    form.innerHTML += "<br/>";
+    //Tao input dia chi
+    let lableAddress = document.createElement("label");
+    lableAddress.setAttribute("for", "address");
+    lableAddress.innerText = "Quê quán";
+    let inputAddress = document.createElement("input");
+    inputAddress.setAttribute("id","address");
+    inputAddress.setAttribute("placeholder","vui lòng nhập địa chỉ quê quán");
+    form.appendChild(lableAddress);
+    form.appendChild(inputAddress);
+    form.innerHTML += "<br/>";
+    //Tao gioi tinh
+    let labelSex = document.createElement("label");
+    labelSex.setAttribute("for", "sex");
+    labelSex.innerText= "Giới tính";
+    let checkMale = document.createElement("input");
+    checkMale.setAttribute("type", "radio");
+    checkMale.setAttribute("name", "sex");
+    checkMale.setAttribute("id", "male");
+    let labelMale = document.createElement("label");
+    labelMale.setAttribute("for", "male");
+    labelMale.innerText= "Nam";
+    let checkFemale = document.createElement("input");
+    checkFemale.setAttribute("type", "radio");
+    checkFemale.setAttribute("name", "sex");
+    checkFemale.setAttribute("id", "female");
+    let labelFemale = document.createElement("label");
+    labelFemale.setAttribute("for", "female");
+    labelFemale.innerText= "Nữ";
+    form.appendChild(labelSex);
+    form.appendChild(checkMale);
+    form.appendChild(labelMale);
+    form.appendChild(checkFemale);
+    form.appendChild(labelFemale);
+    form.innerHTML+= "<br/>";
+    //Tao button
+    let btnSubmit = document.createElement("input");
+    btnSubmit.setAttribute("type", "submit");
+    btnSubmit.setAttribute("value", "Lưu lại");
+    form.appendChild(btnSubmit);
+    divForm.style.border =("1px solid");
+    //Tao table
+
+    let h2Table = document.createElement("h2");
+    h2Table.innerText= "Danh sách học viên";
+    divTable.appendChild(h2Table);
+
+    let labelSearch = document.createElement("label");
+    labelSearch.setAttribute("for", "search");
+    labelSearch.innerText= "Tìm kiếm tên học viên :";
+    let inputSearch = document.createElement("input");
+    inputSearch.setAttribute("id", "search");
+    let searchSubmit = document.createElement("input");
+    searchSubmit.setAttribute("type", "submit");
+    searchSubmit.setAttribute("value", "search");
+    divTable.appendChild(labelSearch);
+    divTable.appendChild(inputSearch);
+    divTable.appendChild(searchSubmit);
+    divTable.innerHTML+= "<br/>";
+
+    let table =document.createElement("table");
+    table.setAttribute("border", "1");
+    divTable.appendChild(table);
+
+    let thead =document.createElement("thead");
+    table.appendChild(thead);
+
+    let tr = document.createElement("tr");
+    thead.appendChild(tr);
+
+    let thStt =document.createElement("th");
+    thStt.innerText ="#";
+    let thFullName = document.createElement("th");
+    thFullName.innerText ="Họ tên";
+    let thEmail = document.createElement("th");
+    thEmail.innerText = "Email";
+    let thPhone = document.createElement("th");
+    thPhone.innerText ="điện thoại";
+    let thAddress=document.createElement("th");
+    thAddress.innerText="Địa chỉ";
+    let thGender = document.createElement("th");
+    thGender.innerText ="Gender";
+    let thAct = document.createElement("th");
+    thAct.innerText="Hành động";
+    let thSx = document.createElement("th");
+    let submitSx =document.createElement("input");
+    submitSx.setAttribute("type", "submit");
+    submitSx.setAttribute("value", "sắp xếp (alpha b)");
+    table.appendChild(thStt);
+    table.appendChild(thFullName);
+    table.appendChild(thEmail);
+    table.appendChild(thPhone);
+    table.appendChild(thAddress);
+    table.appendChild(thGender);
+    table.appendChild(thAct);
+    table.appendChild(thSx);
+    thSx.appendChild(submitSx);
+
+    let tbody = document.createElement("tbody");
+    table.appendChild(tbody);
+
+    let tr1 = document.createElement("tr");
+    let tr2 =document.createElement("tr");
+    tbody.appendChild(tr1);
+    tbody.appendChild(tr2);
+
+    let td1Stt = document.createElement("td");
+    td1Stt.innerText ="1";
+    let td1FullName = document.createElement("td");
+    td1FullName.innerText="rikkei";
+    let td1Email = document.createElement("td");
+    td1Email.innerText="rikkei@gmail.com";
+    let td1Phone = document.createElement("td");
+    td1Phone.innerText="0828638888";
+    let td1Address = document.createElement("td");
+    td1Address.innerText="hà nội";
+    let td1Sex = document.createElement("td");
+    td1Sex.innerText="nam";
+    let td1Act = document.createElement("td");
+    let td1Act1 = document.createElement("td");
+    let td1Act1Submit = document.createElement("input");
+    td1Act1Submit.setAttribute("type", "submit");
+    td1Act1Submit.setAttribute("value", "edit");
+    let td1Act2 = document.createElement("td");
+    let td1Act2Submit = document.createElement("input");
+    td1Act2Submit.setAttribute("type", "submit");
+    td1Act2Submit.setAttribute("value", "delete");
+    
+    tr1.appendChild(td1Stt);
+    tr1.appendChild(td1FullName);
+    tr1.appendChild(td1Email);
+    tr1.appendChild(td1Phone);
+    tr1.appendChild(td1Address);
+    tr1.appendChild(td1Sex);
+    tr1.appendChild(td1Act);
+    td1Act.appendChild(td1Act1);
+    td1Act.appendChild(td1Act2);
+    td1Act1.appendChild(td1Act1Submit);
+    td1Act2.appendChild(td1Act2Submit);
+
+    let td2Stt = document.createElement("td");
+    td2Stt.innerText ="2";
+    let td2FullName = document.createElement("td");
+    td2FullName.innerText="academy";
+    let td2Email = document.createElement("td");
+    td2Email.innerText="academy@gmail.com";
+    let td2Phone = document.createElement("td");
+    td2Phone.innerText="0823868888";
+    let td2Address = document.createElement("td");
+    td2Address.innerText="HCM";
+    let td2Sex = document.createElement("td");
+    td2Sex.innerText="nu";
+    let td2Act = document.createElement("td");
+    let td2Act1 = document.createElement("td");
+    let td2Act1Submit = document.createElement("input");
+    td2Act1Submit.setAttribute("type", "submit");
+    td2Act1Submit.setAttribute("value", "edit");
+    let td2Act2 = document.createElement("td");
+    let td2Act2Submit = document.createElement("input");
+    td2Act2Submit.setAttribute("type", "submit");
+    td2Act2Submit.setAttribute("value", "delete");
+    
+    tr2.appendChild(td2Stt);
+    tr2.appendChild(td2FullName);
+    tr2.appendChild(td2Email);
+    tr2.appendChild(td2Phone);
+    tr2.appendChild(td2Address);
+    tr2.appendChild(td2Sex);
+    tr2.appendChild(td2Act);
+    td2Act.appendChild(td2Act1);
+    td2Act.appendChild(td2Act2);
+    td2Act1.appendChild(td2Act1Submit);
+    td2Act2.appendChild(td2Act2Submit);
+
+    divTable.style.border="1px solid";
+
+   </script>
+</body>
+</html>
